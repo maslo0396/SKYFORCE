@@ -1,0 +1,130 @@
+@use 'vareables' as v;
+
+// ОБРАЩАТЬСЯ К MIXIN ЧЕРЕЗ "@include ім'я_міксину()"
+// ============================================
+
+// Медиазапросы ===================================
+@mixin desktop() {
+  @media (max-width: v.$breakpoint_xxl) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media (max-width: v.$breakpoint_xl) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (max-width: v.$breakpoint_l) {
+    @content;
+  }
+}
+
+@mixin tablet-s() {
+  @media (max-width: v.$breakpoint_ls) {
+    @content;
+  }
+}
+
+@mixin tablet_sm() {
+  @media (max-width: v.$breakpoint_md) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: v.$breakpoint_sm) {
+    @content;
+  }
+}
+
+@mixin mobile_sm() {
+  @media (max-width: v.$breakpoint_xsm) {
+    @content;
+  }
+}
+
+// Адаптивный размер шрифта ========================
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+  
+  @media (max-width: 767.98px) {
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{v.$maxWidth}));
+  }
+  
+  @media (min-width: 768px) {
+    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{v.$maxWidth}));
+  }
+}
+
+// Дополнительные полезные миксины =================
+
+// Миксин для адаптивных отступов
+@mixin adaptiv-value($property, $pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+  
+  @media (max-width: 767.98px) {
+    #{$property}: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{v.$maxWidth}));
+  }
+  
+  @media (min-width: 768px) {
+    #{$property}: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{v.$maxWidth}));
+  }
+}
+
+// Миксин для flex-контейнера
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Миксин для grid-контейнера
+@mixin grid($columns: 1fr, $gap: 0) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
+}
+
+// Миксин для абсолютного позиционирования
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Миксин для transition
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// Миксин для плейсхолдера
+@mixin placeholder($color) {
+  &::placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+// Миксин для псевдоэлементов
+@mixin pseudo($content: '', $display: block, $position: absolute) {
+  content: $content;
+  display: $display;
+  position: $position;
+}

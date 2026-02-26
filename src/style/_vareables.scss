@@ -1,0 +1,120 @@
+// РАЗМЕРЫ ЭКРАНОВ =================================
+// Медиа размеры (max-width)
+$breakpoint_xxl: 1220px;    // Десктоп
+$breakpoint_xl: 991.98px;   // Ноутбук/планшет
+$breakpoint_l: 767.98px;    // Планшет
+$breakpoint_ls: 540px;      // Планшет малый
+$breakpoint_md: 479.98px;   // Мобильный
+$breakpoint_sm: 374.98px;   // Мобильный малый
+$breakpoint_xsm: 320.98px;  // Мобильный очень малый
+
+// Макетная ширина
+$maxWidth: 1720;
+
+// ШРИФТЫ ==========================================
+$roboto: "Roboto", sans-serif;
+$open_sans: "Open Sans", sans-serif;
+
+// ЦВЕТА ===========================================
+// Основные
+$primary: #cdd11d;      // Желто-зеленый (брендовый)
+$dark: #000;            // Черный
+$light: #fff;           // Белый
+$gray: #666;            // Серый
+$light-gray: #999;      // Светло-серый
+
+// Фоновые
+$offer-bg: #ffe0b2;     // Бежевый (для offer)
+$main-bg: #949292;      // Серый (для main)
+
+// ОТСТУПЫ =========================================
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 2rem;      // 32px
+$spacing-xl: 3rem;      // 48px
+$spacing-xxl: 5rem;     // 80px
+
+// Брейкпоинты для медиазапросов (min-width)
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 992px;
+$breakpoint-desktop: 1200px;
+
+// ДОПОЛНИТЕЛЬНЫЕ ЦВЕТА ============================
+$success: #28a745;
+$warning: #ffc107;
+$danger: #dc3545;
+$info: #17a2b8;
+
+// ТЕНИ ============================================
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+
+// РАДИУСЫ =========================================
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+$radius-circle: 50%;
+
+// ШРИФТЫ (размеры) ================================
+$font-size-xs: 0.75rem;   // 12px
+$font-size-sm: 0.875rem;  // 14px
+$font-size-md: 1rem;      // 16px
+$font-size-lg: 1.125rem;  // 18px
+$font-size-xl: 1.25rem;   // 20px
+$font-size-xxl: 1.5rem;   // 24px
+$font-size-xxxl: 2rem;    // 32px
+
+// ВЕСА ШРИФТОВ ====================================
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Z-ИНДЕКСЫ =======================================
+$z-index-dropdown: 100;
+$z-index-sticky: 200;
+$z-index-fixed: 300;
+$z-index-modal-backdrop: 400;
+$z-index-modal: 500;
+$z-index-popover: 600;
+$z-index-tooltip: 700;
+
+// АНИМАЦИИ ========================================
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// КОНТЕЙНЕР =======================================
+$container-max-width: 1200px;
+$container-padding: 20px;
+
+// СЕТКА ===========================================
+$grid-gutter: 30px;
+$grid-columns: 12;
+
+// ФУНКЦИИ ДЛЯ РАБОТЫ С ПЕРЕМЕННЫМИ ================
+@function spacing($key) {
+  @return map-get((
+    'xs': $spacing-xs,
+    'sm': $spacing-sm,
+    'md': $spacing-md,
+    'lg': $spacing-lg,
+    'xl': $spacing-xl,
+    'xxl': $spacing-xxl
+  ), $key);
+}
+
+@function breakpoint($key) {
+  @return map-get((
+    'mobile': $breakpoint-mobile,
+    'tablet': $breakpoint-tablet,
+    'laptop': $breakpoint-laptop,
+    'desktop': $breakpoint-desktop
+  ), $key);
+}
