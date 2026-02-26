@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Видео файлы
+*.mov
+*.mp4
+*.avi
+src/video/
