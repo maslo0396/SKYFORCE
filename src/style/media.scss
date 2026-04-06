@@ -346,6 +346,14 @@
       }
     }
   }
+  .footer{
+    &__link {
+      svg{
+        width: 53px;
+        height: 53px;
+      }
+    }
+  }
 }
 
 /* ===== MOBILE (425px - 575px) ===== */

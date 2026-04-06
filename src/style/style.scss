@@ -224,6 +224,79 @@
     }
   }
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Иконки внутри кнопок (стрелки) */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1e2a3e;
+  transition: all 0.2s ease;
+}
+
+/* 3. Hover эффекты — плавное увеличение и яркий акцент */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: #ffb347;
+  background: linear-gradient(135deg, #ffb347 0%, #ff8c00 100%);
+  transform: scale(1.08);
+  box-shadow: 0 12px 28px rgba(255, 140, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Активное состояние (клик) */
+.swiper-button-prev:active,
+.swiper-button-next:active {
+  transform: scale(0.94);
+  transition: 0.05s;
+  background: #e07c00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 5. Фокус для доступности (красивый outline) */
+.swiper-button-prev:focus-visible,
+.swiper-button-next:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px #ffb347, 0 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+/* 6. Дополнительно: эффект "пульсации" при наведении (тонкий) */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  animation: subtlePulse 0.5s ease;
+}
+
+@keyframes subtlePulse {
+  0% {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 8px 28px rgba(255, 140, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 12px 28px rgba(255, 140, 0, 0.35);
+  }
+}
 /* ===== ADVANTAGES ===== */
 .advantages {
   padding-top: 100px;
@@ -439,7 +512,7 @@
 .footer {
   background-color: #1a1a1a;
   padding: 60px 0 30px;
-  width: 101vw;
+  width: 100%;
   
   &__list {
     display: grid;
