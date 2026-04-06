@@ -45,8 +45,8 @@
   height: 1000px;
   color: #fff;
   background-image: image-set(
-    url("../img/alpenists.webp") type("image/webp"),
-    url("../img/alpenists.jpg") type("image/jpeg")
+    url('/img/alpenists.webp') type('image/webp'),
+    url('/img/alpenists.jpg') type('image/jpeg')
   );
   background-repeat: no-repeat;
   background-size: cover;
@@ -208,10 +208,8 @@
   }
 }
 
+/* Swiper container - ТОЛЬКО ОДИН РАЗ! */
 .swiper {
-  max-width: 1700px;
-  margin: 0 auto;
-  padding: 20px 40px !important; // Отступы для кнопок
   
   &-wrapper {
     padding: 20px 0;
@@ -225,28 +223,7 @@
       border-radius: 8px;
     }
   }
-  
-  // Стили для кнопок
-  &-button-prev,
-  &-button-next {
-    color: #cdd11d;
-    background: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
-    &:after {
-      font-size: 18px;
-    }
-    
-    &:hover {
-      background: #cdd11d;
-      color: white;
-    }
-  }
 }
-
 /* ===== ADVANTAGES ===== */
 .advantages {
   padding-top: 100px;

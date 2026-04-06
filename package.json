@@ -9,7 +9,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "swiper": "^11.0.0"
+    "swiper": "^12.0.0"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",

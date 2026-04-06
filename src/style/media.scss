@@ -224,6 +224,11 @@
       padding: 20px 15px 0;
     }
   }
+  /* job */
+  .swiper-button-prev,
+  .swiper-button-next{
+    display: none !important; 
+  }
 }
 
 /* ===== TABLET SMALL (576px - 767px) ===== */
